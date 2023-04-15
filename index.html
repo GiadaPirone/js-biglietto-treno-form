@@ -11,28 +11,91 @@
 </head>
 <body>
 
-    <div>
-        <p>inserisci il nome</p>
-        <input type="text">
-    </div>
+    <!-- CALCOLA IL PREZZO DEL TUO BIGLIETTO. -->
     
-    <div>
-        <p>inserisci i km</p>
-        <input type="number" id="chilometri" value="5">
+    <div class="container myHeightContainer bg-light py-4 rounded-4 mt-3 shadow p-3 mb-5 bg-body rounded">
+        <div class="row">
+            <div class="col-4 text-center">
+                <p>inserisci il nome</p>
+                <input type="text" id="nomeCognome" value="">
+            </div>
+            
+            <div class="col-4 text-center">
+                <p >inserisci i km</p>
+                <input type="number" id="chilometri" value="">
+            </div>
+
+            <div class="col-4">
+                <p >Fascia di età</p>
+                <select class="form-select" aria-label="Default select example" id="età">
+        
+                    <option selected>Inserisci fascia di età</option>
+                    <option value="maggiorenne">Maggiorenne</option>
+                    <option value="minorenne">Minorenne</option>
+                    <option value="over65">Over 65</option>
+                    
+                </select>
+            </div>   
+        </div>
+
+        <div class="row justify-content-center pt-5">
+            <div class="col-1">
+                <input type="button" onclick="Prezzo()" value="Genera">
+            </div>
+
+            <div class="col-1">
+                <input type="button"  value="Annulla">
+            </div>   
+        </div>
     </div>
 
-    <select class="form-select" aria-label="Default select example" id="età">
-        <option selected>Inserisci fascia di età</option>
-        <option value="maggiorenne">Maggiorenne</option>
-        <option value="minorenne">Minorenne</option>
-        <option value="over65">Over 65</option>
+    <!-- IL TUO BIGLIETTO. -->
 
+    <div class="container myHeightContainer bg-light p-3" id="bigliettoCompleto">
+        <div class="row m-3">
+            <h2>Dettaglio Passeggeri</h2>
+        </div>
         
-      </select>
+        <div class="row m-3">
 
-    <input type="button" onclick="Prezzo()" value="Calcola il prezzo del biglietto "> 
+            <div class="col-4 bg-primary myHeightBiglietto pt-2">
+                <h4 class="mb-4">Nome Passeggero</h4>
+                <span id="risultatoNome"></span>
+            </div>
+            
+            <div class="col-8 myHeightBiglietto border-top border-bottom ">
+                <div class="row">
+                    <div class="col-3 pt-2">
+                        <h4 class="mb-4">Offerta</h4>
+                        <span id="risultatoOfferta"></span>
+                    </div>
 
-    <span id="risultato"></span>
+                    <div class="col-3 pt-2">
+                        <h4 class="mb-4">Carrozza</h4>
+                        <span id="risultatoCarrozza"></span>
+                    </div>
+
+                    <div class="col-3 pt-2">
+                        <h4 class="mb-4">Codice CP</h4>
+                        <span id="risultatoCp"></span>
+                    </div>
+
+                    <div class="col-3 pt-2">
+                        <h4 class="mb-4">Costo Biglietto</h4>
+                        <span id="risultato"></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+  
+
+     
+
+    
 
 
     <script type="text/javascript" src="./js/main.js"></script>
